@@ -8,14 +8,12 @@ export class Haiku {
     this.vowels2 = 0;
     this.vowels3 = 0;
   }
-
   findWords(line) {
     const wordsArr = [];
     wordsArr.push(line.split(' '));
     return wordsArr
   }
-
-  findSilents(word) {
+  findSilentThong(word) {
     const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
     let silentCount = 0;
 
@@ -31,7 +29,6 @@ export class Haiku {
 
     return silentCount
   }
-
   findVowels(word) {
     //finds number of vowels in a word
     const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
@@ -47,8 +44,4 @@ export class Haiku {
     //remove the silent vowels from total vowels
     return vowelCount;
   }
-
-
-
-
 }
