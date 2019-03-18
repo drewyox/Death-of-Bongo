@@ -1,47 +1,92 @@
-//Haiku constructor
-export class Haiku {
-  constructor (line1, line2, line3) {
-    this.first = line1;
-    this.second = line2;
-    this.third = line3;
-    this.vowels1 = 0;
-    this.vowels2 = 0;
-    this.vowels3 = 0;
+export class Tamagotchi {
+  constructor () {
+    this.food = 10;
+    this.sleep = 10;
+    this.attention = 10;
   }
-  findWords(line) {
-    const wordsArr = [];
-    wordsArr.push(line.split(' '));
-    return wordsArr
-  }
-  findSilentThong(word) {
-    const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
-    let silentCount = 0;
 
-    for (let i = 0; i < word.length; i++) {
-      if(vowels.includes(word[i]) && vowels.includes(word[i + 1])){
-        silentCount++;
+
+  // existence() {
+  //   setInterval(() => {
+  //     this.food + 3;
+  //     this.sleep - 2;
+  //     this.attention--;
+  //   }, 1000);
+  // }
+
+
+  endIt(intervalId){
+    clearInterval(intervalId);
+  }
+
+
+
+  hungry() {
+  var hungryId = setInterval(() => {
+      this.food--;
+    }, 6000);
+    return hungryId;
+  }
+  sleepy() {
+  var sleepyId = setInterval(() => {
+      this.sleep--;
+    }, 8000);
+    return sleepyId;
+  }
+  bored() {
+  var boredId = setInterval(() => {
+      this.attention--;
+    }, 1000);
+    return boredId;
+  }
+  death(hungryId, sleepyId, boredId, dethId) {
+    let dead = false;
+    var intervalId = setInterval(() => {
+      if (this.food <= 0 || this.sleep <= 0 || this.attention <= 0) {
+        if (!dead) {
+          alert("Your Tamagotchi is dead, my condolences");
+          this.endIt(hungryId);
+          this.endIt(sleepyId);
+          this.endIt(boredId);
+          this.endIt(dethId);
+          this.endIt(intervalId);
+
+          dead = true;
+        }
+        console.log("test");
+        return true;
+
       }
-    }
+    }, 1000);
+    return intervalId;
+  };
 
-    if(word[word.length -1] === 'e') {
-      silentCount++;
-    }
+  // trueDeath(deathInt) {
+  //   if (true){
+  //     this.endIt(deathInt);
+  //   }
+  // };
 
-    return silentCount
+
+  feed () {
+    this.food++;
+  };
+
+  rest() {
+    this.sleep = 10;
+  };
+
+  play () {
+    this.attention++;
+  };
+
+  checkNumbers() {
+    setInterval(() => {
+      console.log(this.food, this.sleep, this.attention);
+
+
+    }, 1000)
   }
-  findVowels(word) {
-    //finds number of vowels in a word
-    const vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
-    const splitWord = word.split('');
-    let vowelCount = 0;
-    let silentCount = 0;
-    //find all vowels
-    for (let i = 0; i < splitWord.length; i++) {
-      if(vowels.includes(splitWord[i])) {
-        vowelCount++;
-      }
-    }
-    //remove the silent vowels from total vowels
-    return vowelCount;
-  }
+
+
 }

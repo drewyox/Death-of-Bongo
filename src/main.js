@@ -1,39 +1,57 @@
 import 'bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
 import './sass/styles.scss';
-// import './backEnd.js';
-
-//find the number of syllables {
-
-    //count the number of vowels in a word
-
-    //subtract any silent vowels
-    //like the silent "e" at the end of a word or the second vowel when two vowels are together in a syllable
-
-    //check if it is a dipthong
-    //if it is, subtract one vowel
-
-    //number of vowels sounds left is the same as the number of sylables
-
-//}
+import './backEnd.js';
+import $ from 'jquery';
+import {Tamagotchi} from "./backEnd.js";
 
 
+$(document).ready(function() {
+  const bongo = new Tamagotchi();
+  let hungryIntervalId = bongo.hungry();
+  let sleepIntervalId = bongo.sleepy();
+  let boredIntervalId = bongo.bored();
+  // let deathIntervalId = bongo.death();
+  bongo.death(hungryIntervalId, sleepIntervalId, boredIntervalId);
+  // bongo.trueDeath(deathIntervalId);
+  bongo.checkNumbers();
+
+
+  $('#feedBut').click(function() {
+    bongo.feed();
+    console.log(bongo.food)
+  });
+  $('#playBut').click(function() {
+    bongo.play();
+    console.log(bongo.attention)
+  });
+  $('#sleepBut').click(function() {
+    bongo.rest();
+    console.log(bongo.sleep);
+  });
+
+
+  // bongo.endIt(hungryIntervalId);
+  // bongo.endIt(sleepIntervalId);
+  // bongo.endIt(boredIntervalId);
+  // bongo.endIt(deathIntervalId);
+
+
+});
 
 
 
 
 
-//divide between two middle consonants
-//hap/pen
 
-//usually divide before a single middle consonant
-// o/pen  i/tem
 
-//divide before the consonant before an "-le" syllable
-//tick/le  is the exception and the like
-//a/ble fum/ble mum/ble
-
-// Divide off any compound words, prefixes, suffixes and roots which have vowel sounds.
-//words like "sports/car" and "house/boat"
-//"un/happy", "pre/paid", or "re/write"
-//"farm/er", "teach/er", "hope/less" and "care/ful"
+// $(document).ready(function() {
+//   $('#ping-pong-form').submit(function(event) {
+//     event.preventDefault();
+//     var goal = $('#goal').val();
+//     var output = pingPong(goal);
+//     output.forEach(function(element) {
+//       $('#solution').append("<li>" + element + "</li>");
+//     });
+//   });
+// });
