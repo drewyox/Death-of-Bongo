@@ -7,6 +7,7 @@ import {Tamagotchi} from "./backEnd.js";
 
 
 $(document).ready(function() {
+
   const bongo = new Tamagotchi();
   let hungryIntervalId = bongo.hungry();
   let sleepIntervalId = bongo.sleepy();
@@ -15,7 +16,10 @@ $(document).ready(function() {
   bongo.death(hungryIntervalId, sleepIntervalId, boredIntervalId);
   // bongo.trueDeath(deathIntervalId);
   bongo.checkNumbers();
-
+  // sleepBar(bongo);
+  bongo.sleepBar();
+  bongo.foodBar();
+  bongo.funBar();
 
   $('#feedBut').click(function() {
     bongo.feed();
@@ -29,6 +33,12 @@ $(document).ready(function() {
     bongo.rest();
     console.log(bongo.sleep);
   });
+  $('#pickOn').click(function(){
+    bongo.pickOn();
+  })
+  $('#inject').click(function(){
+    bongo.inject();
+  })
 
 
   // bongo.endIt(hungryIntervalId);

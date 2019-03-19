@@ -29,6 +29,12 @@ describe (Tamagotchi, function() {
     expect(bingo.death()).toEqual(true);
   })
 
+
+  it('should have a progress bar that depletes based on the stat', function(){
+    jasmine.clock().tick(5001)
+    expect(bingo.sleepBar()).toEqual(3)
+  })
+
 });
 
 

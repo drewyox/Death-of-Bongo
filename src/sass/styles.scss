@@ -1,9 +1,50 @@
-h1  {
-  color: green;
-}
 
 
 body {
   background-color: lightblue;
   text-align: center;
+}
+
+h1  {
+  color: green;
+}
+
+.meter-container {
+  background-color: whitesmoke;
+  width: 75%;
+  height: 300px;
+  margin: auto;
+  margin-top: 5vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  #sleep-container, #food-container, #attention-container {
+    display: flex;
+    border: 2px solid orange;
+    height: 80%;
+    width: 15%;
+    .fullS {
+      align-self: flex-end;
+      background-color: green;
+      height: 100%;
+      width: 100%;
+      transition: height 2s;
+    }
+    .fullA {
+      align-self: flex-end;
+      background-color: green;
+      height: 100%;
+      width: 100%;
+      transition: height 2s;
+    }
+    .fullF {
+      align-self: flex-end;
+      background-color: green;
+      height: 100%;
+      width: 100%;
+      transition: height 2s;
+    }
+
+  }
+
 }
