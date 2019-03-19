@@ -1,13 +1,56 @@
 
+@keyframes exist {
+  0%, 100% {
+   margin-bottom: 0;
+ }
+ 50% {
+   margin-bottom: 50px;
+ }
+}
+
+@keyframes dieTomo {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  100%{
+    transform: scale(0) rotate(900deg);
+  }
+}
 
 body {
-  background-color: lightblue;
+  background-image: url("../../img/space.png");
   text-align: center;
+  color: lightblue;
 }
 
 h1  {
-  color: green;
+  color: hotpink;
 }
+
+.tamaHome {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 75%;
+  height: 300px;
+     .firstBorn {
+       animation: exist 1s linear infinite;
+       height: 80%;
+       display: none;
+     }
+     .firstDead {
+       height: 80%;
+       display: none;
+     }
+   }
+
+
+.deadAnimation {
+  animation: dieTomo 2s 2s forwards;
+}
+
 
 .meter-container {
   background-color: whitesmoke;
@@ -20,9 +63,11 @@ h1  {
   align-items: center;
   #sleep-container, #food-container, #attention-container {
     display: flex;
-    border: 2px solid orange;
+    border: 4px solid lightblue;
     height: 80%;
     width: 15%;
+    border-radius:4px;
+    }
     .fullS {
       align-self: flex-end;
       background-color: green;
@@ -47,4 +92,23 @@ h1  {
 
   }
 
-}
+  .buttonDiv {
+    display: flex;
+    background-color: whitesmoke;
+    padding-bottom: 2vw;
+    justify-content: space-around;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 2vw;
+    button {
+      background-color: hotpink;
+      width: 15%;
+    }
+  }
+  button {
+    background-color: hotpink;
+  }
+  .killBut {
+    background-color: red;
+    color: darkred;
+  }

@@ -6,60 +6,46 @@
   </head>
   <body>
     <h1>TAMAGOTCHI</h1>
+<form class="nameIt" action="index.html" method="post">
+<input id="name-input" type="text" name="" value="">
+<button type="submit" name="button">NAME IT</button>
+</form>
+<p class="name-out"></p>
 
-<input type="text" name="" value="">
+  <div class="tamaHome">
+    <img class="firstBorn" src="../img/boi.jpg" alt="">
+    <img class="firstDead" src="../img/boi.jpg" alt="">
+  </div>
+  <br>
+  <br>
 
-<br>
-<button id="feedBut" type="button" name="button">Feed</button>
-<button id="playBut" type="button" name="button">Play</button>
-<button id="sleepBut" type="button" name="button">Sleep</button>
-<br>
-<button id="pickOn" type="button" name="button">Pick On</button>
-<button id="inject" type="button" name="button">Inject with Stimulants</button>
+  <section class="meters">
 
-
-<section class="meters">
   <div class="meter-container">
     <div id="sleep-container">
       <div class="fullS">
       </div>
-      <!-- <div class="seventyfive">
-      </div>
-      <div class="fifty">
-      </div>
-      <div class="twentyfive">
-      </div>
-      <div class="ded">
-      </div> -->
     </div>
     <div id="food-container">
       <div class="fullF">
       </div>
-      <!-- <div class="seventyfive">
-      </div>
-      <div class="fifty">
-      </div>
-      <div class="twentyfive">
-      </div>
-      <div class="ded">
-      </div> -->
     </div>
     <div id="attention-container">
       <div class="fullA">
-      </div>
-      <!-- <div class="seventyfive">
-      </div>
-      <div class="fifty">
-      </div>
-      <div class="twentyfive">
-      </div>
-      <div class="ded"> -->
       </div>
     </div>
   </div>
 
 </section>
+<div class="buttonDiv">
+  <button id="sleepBut" type="button" name="button">Sleep</button>
+  <button id="feedBut" type="button" name="button">Feed</button>
+  <button id="playBut" type="button" name="button">Play</button>
+</div>
 
+<button id="pickOn" type="button" name="button">Pick On</button>
+<button id="inject" type="button" name="button">Inject with Stimulants</button>
+<button class="killBut" type="button" name="button">Kill</button>
 
   </body>
 </html>

@@ -59,6 +59,10 @@ export class Tamagotchi {
       }
       if (progress <= 0) {
         $(".fullS").css({"height": "100%", "background-color": "black"});
+        $(".firstBorn").hide();
+        $(".firstDead").show();
+        $("button").hide();
+        $(".tamaHome").addClass("deadAnimation");
       }
     },  1000)
   }
@@ -94,14 +98,20 @@ export class Tamagotchi {
     this.attention--;
   }
 
+  kill() {
+    this.sleep = 0;
+    this.attention = 0;
+    this.food = 0;
+  }
+
   inject() {
     this.sleep -= 3;
-    this.attention = 3;
+    this.attention += 3;
     this.food--;
   }
 
   feed () {
-    this.food++;
+    this.food += 3;
   };
 
   rest() {
@@ -138,6 +148,10 @@ export class Tamagotchi {
        }
        if (progress <= 0) {
          $(".fullF").css({"height": "100%", "background-color": "black"});
+         $(".firstBorn").hide();
+         $(".firstDead").show();
+         $("button").hide();
+         $(".tamaHome").addClass("deadAnimation");
        }
    },  1000)
  }
@@ -159,6 +173,10 @@ export class Tamagotchi {
       }
       if (progress <= 0) {
         $(".fullA").css({"height": "100%", "background-color": "black"});
+        $(".firstBorn").hide();
+        $(".firstDead").show();
+        $("button").hide();
+        $(".tamaHome").addClass("deadAnimation");
       }
   },  1000)
 }
